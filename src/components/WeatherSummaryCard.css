@@ -1,0 +1,45 @@
+.weather-summary-card {
+    background: linear-gradient(135deg, #d5d5fa, #d1d1e9); /* Same gradient background */
+    border-radius: 15px;  /* Rounded corners */
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Same shadow effect */
+    color: #4a4a4a; /* Text color */
+    text-align: center; /* Centered text */
+  }
+  
+  .summary-title {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333; /* Title color */
+  }
+  
+  .summary-metrics {
+    display: flex;
+    justify-content: space-around; /* Space out metrics evenly */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 15px; /* Space above metrics */
+  }
+  
+  .metric {
+    flex: 1;
+    min-width: 150px; /* Ensures a minimum width */
+    text-align: center;
+    margin: 10px;
+    padding: 15px; /* Increased padding for spacing */
+    border-radius: 10px; /* Rounded corners for metrics */
+    background-color: #ffffff; /* Background for individual metrics */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .metric h3 {
+    font-size: 1.2em; /* Slightly smaller than title */
+    margin: 10px 0; /* Space above and below */
+    color: #333; /* Color for metric titles */
+  }
+  
+  .metric p {
+    font-size: 1.1em; /* Font size for values */
+    color: #222; /* Darker color for the metric value */
+  }
+  

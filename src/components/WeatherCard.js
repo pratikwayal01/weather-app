@@ -1,7 +1,8 @@
+// WeatherCard.js
 import React from 'react';
 import './WeatherCard.css';
 
-function WeatherCard({ cityData }) {
+function WeatherCard({ cityData, isAlert }) {
   const { name, main, weather, wind, dt } = cityData;
 
   // Convert timestamp to a readable date and time
@@ -11,12 +12,13 @@ function WeatherCard({ cityData }) {
 
   // Get the icon code from the weather data
   const iconCode = weather[0].icon; // e.g., "10n"
-  
-  // Construct the path to the SVG file
   const iconPath = `/svg/${iconCode}.svg`; // Assuming SVG files are named as icon codes
 
   return (
+  // Temp Convert Button
+  <button type=""></button>
     <div className="weather-card">
+      {isAlert && <div className="alert-pin">⚠️</div>} {/* Alert indicator */}
       <h2>{name}</h2>
       <p>{formattedDate} {formattedTime}</p> {/* Display date and time */}
       <img 

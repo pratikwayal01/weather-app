@@ -1,24 +1,23 @@
 import React, { useEffect } from 'react';
 
-function Alerts({ weatherData, alerts, setAlerts }) {
+function Alerts({ weatherData, setAlerts }) {
   useEffect(() => {
-    // Example of setting alerts when a certain condition is met
-    if (weatherData.length > 0) {
-      const newAlerts = weatherData.filter(city => city.main.temp > 35); // Example threshold
-      setAlerts(newAlerts);
-    }
+    weatherData.forEach(city => {
+      if (city.main.temp > 35) {
+        setAlerts(prevAlerts => [
+          ...prevAlerts,
+          { city: city.name, message: 'Temperature exceeds 35°C!' }
+        ]);
+      }
+    });
   }, [weatherData, setAlerts]);
-
-  if (!alerts || alerts.length === 0) {
-    return <p>No alerts</p>; // Handle empty alerts
-  }
 
   return (
     <div>
-      <h2>Weather Alerts</h2>
-      {alerts.map((alert, index) => (
-        <div key={index}>
-          <p>Alert for {alert.name}: Temperature exceeds threshold!</p>
+      <h3>Alerts</h3>
+      {weatherData.map(city => (
+        <div key={city.id}>
+          {city.main.temp > 35 && <p>{city.name}: High temperature alert!</p>}
         </div>
       ))}
     </div>

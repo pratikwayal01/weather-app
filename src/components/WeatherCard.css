@@ -6,6 +6,7 @@
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #4a4a4a;
+  position: relative; /* Allows for absolute positioning of the alert pin */
 }
 
 .weather-card h2 {
@@ -19,57 +20,20 @@
   font-size: 1em;
 }
 
-.weather-card .temperature {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.weather-card .weather-icon {
+  width: 100px; /* Set a uniform width */
+  height: 100px; /* Set a uniform height */
+  object-fit: contain; /* Keep the aspect ratio of the image */
 }
 
-.weather-card .temperature i {
-  font-size: 2em;
-  margin-right: 10px;
-}
-
-.weather-card .description {
-  font-size: 1.2em;
-  color: #777;
-}
-
-.weather-card .date-time {
-  color: #999;
-  font-size: 0.9em;
-}
-
-.weather-card .additional-info {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.weather-card .additional-info div {
-  flex: 1;
-  font-size: 0.9em;
-}
-
-.weather-card .additional-info div:not(:last-child) {
-  margin-right: 10px;
-}
-
-
-@keyframes snow {
-  0% {
-    background-position: 0 -100px;
-  }
-  100% {
-    background-position: 0 100px;
-  }
-}
-.weather-icon {
-  width: 100px;    /* Set a uniform width */
-  height: 100px;   /* Set a uniform height */
-  /* Optional: To maintain aspect ratio and ensure the image is centered */
-  object-fit: contain;  /* This keeps the aspect ratio of the image */
+.alert-pin {
+  position: absolute; /* Position pin absolutely within the card */
+  top: 10px; /* Position from the top */
+  right: 10px; /* Position from the right */
+  background-color: red; /* Red background */
+  color: white; /* White text */
+  padding: 5px; /* Padding for the pin */
+  border-radius: 50%; /* Round shape */
+  font-size: 1.5em; /* Font size for the pin */
+  z-index: 10; /* Ensure it sits on top */
 }
